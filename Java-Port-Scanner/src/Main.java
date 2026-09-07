@@ -11,7 +11,7 @@ public class Main{
         final int startPort = 1;
         final int endPort = 1024;
 
-        System.out.println("Enter IP Address to have ports scanned\n");
+        System.out.println("Enter IP Address to have ports scanned");
 
         // Takes the input of the next line
         try{
@@ -24,8 +24,8 @@ public class Main{
 
         // Scan Ports
         for (int port = startPort; port <= endPort; port++){
-            try (Socket socket = new Socket(host, port)){ // Creates a new socket per port
                 System.out.println("Scanning Port: " + port);
+            try (Socket socket = new Socket(host, port)){ // Creates a new socket per port
             } catch (ConnectException e){
                 System.out.println(" Connection Refused");
             } catch(SocketTimeoutException e){

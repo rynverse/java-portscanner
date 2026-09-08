@@ -5,7 +5,6 @@ This is a Java script that scans the port of a given domain, telling you whether
 
 **This script is for educational purposes only, do not use this on anyone without their permission. Only use legimitate targets to test Port Scanning scripts like `scanme.nmap.org` as these are provided for the explicit use of testing port scanners.**
 
-
 ### How it works
 The script uses the `Scanner` class to take a user's target domain from the command line, which is then turned into an IP address to be scanned. It then creates a new socket object taking in the `InetAddress` and port, checking what gets returned and returning an output depending on what was caught.
 
@@ -22,6 +21,11 @@ I relearnt how to use Scanners in Java, by creating a new Scanner object `input`
 I also learnt how to use Socket in Java, as well as `try` statements too. Similarly to Scanners, you need to create a `Socket` object and supply it with a target `inet` address and a port, which can be done with the step above, and using a for loop. With `try/catch` statements good for repeating a task and seeing what is returned, being more readable than `if/else` statements.
 
 This made me appreciate the simplicity of libraries such as `nmap`, where we give a command, some parameters and it does its job - although we know how to use tools like `nmap`, its important we understand how they work under the hood. Finally, this project has given me the confidence to try make my own cybersecurity tools, rather than fully relying on using tools that are given to me - which can prove exceptionally helpful in incident response.
+
+### Challenges faced
+One challenged I faced while working on this project was making `Main.java` an executable file. Although this sounds trivial at first (for previous Java projects I had been using processing, which automatically turned files into a `.class` file) I had not compiled a Java file before. I overcame this with a quick search (and diagnosing session), installing the Java SDK from Adoptium and running `javac` on `Main.java`.
+
+A second challenge I faced was understanding Java `exceptions`, I had not come across try/catch statements using exceptions. For example, in my code I use the `getbyName` method, however since I was taking user input I get an `UnknownHostException` as it was not given a value. I overcame this by finding ways to handle the `UnknownHostException` on the internet until I found the try/catch statement, which was my chosen solution to the problem.
 
 ### Results & Output
 When given a link, the script should output:
